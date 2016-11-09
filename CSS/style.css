@@ -1,0 +1,18 @@
+.datos {
+  position: relative;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.codigo {
+  position: absolute;
+  right: 0px;
+}
+
+.img {
+  margin-bottom: 20px;
+}
+
+.informacionPersona {
+  font-size: 25px;
+}

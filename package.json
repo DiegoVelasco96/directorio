@@ -1,0 +1,22 @@
+{
+  "name": "directorio",
+  "version": "1.0.0",
+  "description": "Directorio en AngularJS",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegoVelasco96/directorio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiegoVelasco96/directorio/issues"
+  },
+  "homepage": "https://github.com/DiegoVelasco96/directorio#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
+}

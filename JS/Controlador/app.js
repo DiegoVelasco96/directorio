@@ -13,6 +13,15 @@
       }
     });
 
+    app.config(['$routeProvider', function($routeProvider) {
+
+      $routeProvider
+        .when('/', {
+          templateUrl: 'Vista/index.html',
+          controller: 'directorioController'
+        })
+    }]);
+
     app.controller('comenentarioController', function()) {
       this.comentario = [];
       this.show = true;

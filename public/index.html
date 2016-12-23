@@ -11,6 +11,7 @@
   <script src="JS/lib/underscore-min.js"></script>
   <script src="JS/lib/angular.min.js"></script>
   <script src="JS/lib/angular-route.min.js"></script>
+  <script src="http://unpkg.com/angular-ui-router@1.0.0-beta.3/release/angular-ui-router.js"></script>
 </head>
 
 <body>
@@ -24,83 +25,15 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-          <a class="navbar-brand" href="#">Directorio</a>
+          <a class="navbar-brand" href="#/vista">Directorio</a>
         </div>
       </div>
     </nav>
-    <div ng-controller="directorioController as dtCtrl">
-      <div class="datos">
-        <span><strong>{{dtCtrl.persona.nombre}} {{dtCtrl.persona.apellido}}</strong></span>
-        <span class="label label-success codigo">{{dtCtrl.persona.codigo}}</span>
-      </div>
-      <div class="img">
-        <img src="../IMG/silueta.jpg" alt="Silueta" width="300px" class="silueta">
-      </div>
-      <ul class="list-group informacionPersona">
-        <li class="list-group-item">
-          <strong>Código: </strong>
-          <span class="pull-right">{{dtCtrl.persona.codigo}}</span>
-        </li>
-        <li class="list-group-item">
-          <strong>Nombre: </strong>
-          <span class="pull-right">{{dtCtrl.persona.nombre}} {{dtCtrl.persona.apellido}}</span>
-        </li>
-        <li class="list-group-item">
-          <strong>Cedula: </strong>
-          <span class="pull-right">{{dtCtrl.persona.cedula}}</span>
-        </li>
-        <li class="list-group-item">
-          <strong>Celular: </strong>
-          <span class="pull-right">{{dtCtrl.persona.celular}}</span>
-        </li>
-        <li class="list-group-item">
-          <strong>Habilidades: </strong>
-          <ul ng-repeat="habilidad in dtCtrl.persona.habilidades">
-            <li>{{habilidad}}</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div ng-controller="comenentarioController as cmtsCtrl">
-      <button class="btn btn-primary" ng-hide="show" ng-click="toggle()">Mostrar comentarios <span class="badge">{{comments.length}}</span></button>
-      <div class="panel panel-primary" ng-show="show">
-        <div class="panel-heading">
-          <h1 class="panel-title">Comentarios <button class="close pull-right" ng-click="toggle()">&times;</button></h1>
-        </div>
-        <br>
-        <div class="contentComment">
-          <form class="form-horizontal" role="form" ng-submit="addCommment()">
-            <div class="form-group">
-              <div class="col-sm-6">
-                <textarea class="form-control" rows="3" id="textArea" ng-model="comment.body" placeholder="Ingresa tu comentario"></textarea>
-              </div>
-              <div class="col-sm-4">
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="comment.email" ng-disabled="comment.anonymous" />
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" ng-model="comment.anonymous" ng-change="anonymousChanged()"/>
-                    Anonymous
-                  </label>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <button type="submit" class="btn btn-primary">Comentar</button>
-              </div>
-            </div>
-          </form>
-          <blockquote ng-repeat="comment in comments">
-            <p>{{comment.body}}</p>
-            <footer>Comment by
-              <a href="mailto:{{comment.email}}" ng-if="!comment.anonymous">{{comment.email}}</a>
-              <em ng-if="comment.anonymous">Anonymous</em> on <span>{{comment.date | date : 'medium'}}</span>
-            </footer>
-          </blockquote>
-        </div>
-      </div>
-    </div>
+    <div ui-view></div>
   </div>
 </body>
 
 <script src="JS/app.js"></script>
+<script src="JS/controladores.js"></script>
 
 </html>
